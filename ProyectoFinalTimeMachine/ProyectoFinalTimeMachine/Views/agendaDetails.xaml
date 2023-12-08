@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinalTimeMachine.Views.agendaDetails">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Agenda Info"
+             VerticalOptions="Center" 
+             HorizontalOptions="Center"
+                FontSize="Large"/>
+
+            <Label Text="{Binding Tarea}" FontSize="Medium"/>
+            <Label Text="{Binding Descripcion}" FontSize="Medium"/>
+            <Label Text="{Binding Fecha}" FontSize="Medium"/>
+            <Label Text="{Binding Hora}" FontSize="Medium"/>
+            <Label Text="Completada" IsVisible="{Binding IsCompleted}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

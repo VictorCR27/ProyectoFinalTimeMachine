@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinalTimeMachine.Views.agendaListPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add"
+                     x:Name="AddToolBarItem"
+                     Clicked="AddToolBarItem_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar Placeholder="Search..."
+                       x:Name="txtSearch"
+                       TextChanged="TxtSearch_TextChanged"
+                       SearchButtonPressed="TxtSearch_SearchButtonPressed" />
+
+            <ListView x:Name="TareaListView"
+                      ItemsSource="{Binding task}"
+                      HasUnevenRows="True"
+                      ItemTapped="TareaListView_ItemTapped"
+                      IsRefreshing="True"
+                      IsPullToRefreshEnabled="True">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <SwipeView>
+                                <SwipeView.LeftItems>
+                                    <SwipeItems>
+                                        <SwipeItem Text="Edit"
+                                                   BackgroundColor="Red"
+                                                   CommandParameter="{Binding Id}"
+                                                   Invoked="EditSwipeItem_Invoked" />
+
+                                        <SwipeItem Text="Delete"
+                                                   BackgroundColor="Red"
+                                                   CommandParameter="{Binding Id}"
+                                                   x:Name="DeleteSwipeItem"
+                                                   Invoked="DeleteMenuItem_Clicked" />
+                                    </SwipeItems>
+                                </SwipeView.LeftItems>
+
+                                <StackLayout Orientation="Horizontal"
+                                             Padding="5">
+                                    <StackLayout HorizontalOptions="StartAndExpand">
+                                        <Label Text="{Binding Tarea}" FontSize="Medium" />
+                                        <Label Text="{Binding Descripcion}" />
+                                        <Label Text="{Binding Fecha}" />
+                                        <Label Text="{Binding Hora}" />
+                                        <Label Text="Completada" IsVisible="{Binding IsCompleted}" TextColor="Green" />
+                                        <Label Text="Pendiente" IsVisible="{Binding IsCompleted, Converter={StaticResource BooleanConverter}}" TextColor="Red" />
+                                    </StackLayout>
+
+                                    <StackLayout VerticalOptions="Center"
+                                                 HorizontalOptions="EndAndExpand">
+                                        <Image Source="edit.png"
+                                               HeightRequest="20"
+                                               WidthRequest="20">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer x:Name="EditTap"
+                                                                      Tapped="EditTap_Tapped"
+                                                                      CommandParameter="{Binding Id}" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+
+                                        <Image Source="delete.png"
+                                               HeightRequest="20"
+                                               WidthRequest="20">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer x:Name="DeleteTap"
+                                                                      Tapped="DeleteTap_Tapped"
+                                                                      CommandParameter="{Binding Id}" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+
+
+
+                                    </StackLayout>
+                                </StackLayout>
+                            </SwipeView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

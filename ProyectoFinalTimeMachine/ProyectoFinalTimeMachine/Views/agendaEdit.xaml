@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ProyectoFinalTimeMachine.Views"
+             x:Class="ProyectoFinalTimeMachine.Views.agendaEdit">
+    <ContentPage.Content>
+        <StackLayout Padding="15" VerticalOptions="CenterAndExpand">
+
+            <Entry x:Name="TxtId"
+                   IsVisible="false"
+                   Text="{Binding Task.Id}"/>
+
+            <Entry x:Name="TxtName"
+                   Placeholder="Nombre de la tarea"
+                   Text="{Binding Task.Tarea}"/>
+            
+            <Entry x:Name="TxtEmail"
+                   Placeholder="Descripcion"
+                   Text="{Binding Task.Descripcion}"/>
+
+            <!-- Utiliza un DatePicker para la fecha -->
+            <DatePicker x:Name="datePicker" Date="{Binding task.Fecha}" MinimumDate="{x:Static local:DateTimeHelper.Today}" />
+
+            <TimePicker x:Name="txtHora" Time="{Binding task.Hora}" Format="T" />
+            
+            <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                <Label Text="Completado:" VerticalOptions="Center" />
+                <Switch IsToggled="{Binding Task.IsCompleted}" VerticalOptions="Center" />
+            </StackLayout>
+
+            <Button Text="Update"
+                    x:Name="ButtonUpdate"
+                    CornerRadius="15"
+                    Command="{Binding CommandUpdate}" />
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
