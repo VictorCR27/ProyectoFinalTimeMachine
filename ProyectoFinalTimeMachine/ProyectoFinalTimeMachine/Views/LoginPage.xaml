@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinalTimeMachine.Views.LoginPage"             
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#2f74b5">
+
+    <ContentPage.Content>
+
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0" Margin="0,20,0,20" Source="https://icons.iconarchive.com/icons/osullivanluke/orb-os-x/512/Time-Machine-icon.png" Aspect="AspectFit" HeightRequest="120" WidthRequest="80"></Image>
+
+            <Frame Grid.Row="1" Margin="20,0,20,160" BorderColor="#1C375C" HasShadow="True"  CornerRadius="50">
+
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" Padding="20">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0"  Text="TimeMachine!" FontSize="24" FontAttributes="Bold" TextColor="#1C375C" HorizontalOptions="CenterAndExpand"></Label>
+                    <Label Grid.Row="1" Margin="0,-15,0,0" Text="Ingresa a tu cuenta" TextColor="#1C375C"  HorizontalOptions="CenterAndExpand"></Label>
+                    <Entry x:Name="entryId" Grid.Row="2" Placeholder="Correo" Margin="0,20,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Text="{Binding Correo, Mode=TwoWay}"></Entry>
+                    <Entry x:Name="entryPassword" Grid.Row="3" Placeholder="Contraseña" IsPassword="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Text="{Binding Contraseña, Mode=TwoWay}"></Entry>
+                    <Button Grid.Row="4" Text="Login" BackgroundColor="#1C375C" TextColor="White" CornerRadius="20" FontAttributes="Bold"  Command="{Binding LoginCommand}">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Color="#3498DB" Offset="0.0" />
+                                <GradientStop Color="#1e2671" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="registro" Grid.Row="8" Clicked="Registro_Clicked" Text="No tienes cuenta? Registro" FontSize="13" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent"></Button>
+                </Grid>
+
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

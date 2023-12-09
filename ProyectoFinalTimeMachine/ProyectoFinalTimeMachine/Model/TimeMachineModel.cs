@@ -11,7 +11,13 @@ namespace ProyectoFinalTimeMachine.Model
         private string descripcion;
         private string fecha;
         private string hora;
-        public bool isCompleted;
+        public bool isCompleted;  
+
+        //private string usuario;
+        //private string clave;
+        //private string nombre;
+        //private string correo;
+        //private string IdUsuario;
 
         public string Id
         {
@@ -80,6 +86,61 @@ namespace ProyectoFinalTimeMachine.Model
                 OnPropertyChanged();
             }
         }
+
+
+        // Propiedades del ViewModel Registro      
+
+        //public string UsuarioId
+        //{
+        //    get => IdUsuario;
+        //    set
+        //    {
+        //        IdUsuario = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
+
+        //public string Usuario
+        //{
+        //    get => usuario;
+        //    set
+        //    {
+        //        usuario = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
+
+        
+        //public string Clave
+        //{
+        //    get => clave;
+        //    set
+        //    {
+        //        clave = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
+
+        
+        //public string Nombre
+        //{
+        //    get => nombre;
+        //    set
+        //    {
+        //        nombre = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
+   
+        //public string Correo
+        //{
+        //    get => correo;
+        //    set
+        //    {
+        //        correo = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
         /***** NOTIFICAR LA decimalERFAZ ****/
         public event PropertyChangedEventHandler PropertyChanged;

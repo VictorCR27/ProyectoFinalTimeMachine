@@ -49,8 +49,8 @@ namespace ProyectoFinalTimeMachine.ViewModel
         {
             task.Tarea = string.Empty;
             task.Descripcion = string.Empty;
-            task.Fecha = DateTime.Today; // Establece la fecha actual al limpiar
-            task.Hora = TimeSpan.Zero; // Establece la hora a cero al limpiar
+            task.Fecha = DateTime.Today; 
+            task.Hora = TimeSpan.Zero; 
             task.IsCompleted = false;
         }
 
@@ -67,11 +67,11 @@ namespace ProyectoFinalTimeMachine.ViewModel
             {
                 mensaje += "La descripción es requerida.\n";
             }
-            if (task.Fecha == DateTime.MinValue) // Verifica que la fecha no sea la predeterminada
+            if (task.Fecha == DateTime.MinValue) 
             {
                 mensaje += "La fecha de vencimiento es requerida.\n";
             }
-            if (task.Hora == TimeSpan.Zero) // Verifica que la hora no sea la predeterminada
+            if (task.Hora == TimeSpan.Zero) 
             {
                 mensaje += "La hora es requerida.\n";
             }

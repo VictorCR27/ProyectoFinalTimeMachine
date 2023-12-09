@@ -9,7 +9,7 @@ namespace ProyectoFinalTimeMachine
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new agendaListPage());
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()

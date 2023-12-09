@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinalTimeMachine.Views.RegisterPage"             
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Transparent">
+
+    <ContentPage.Content>
+        <Grid>
+            <!-- Fondo con gradiente -->
+            <BoxView Color="#2f74b5">
+                <BoxView.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#3498DB" Offset="0.0" />
+                        <GradientStop Color="#1e2671" Offset="1.0" />
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+
+            <!-- Contenido de la página -->
+            <StackLayout>
+                <Label Text="Registro" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="30" Margin="0,20,0,10"/>
+
+                <Frame CornerRadius="20" BackgroundColor="White" Margin="20">
+                    <StackLayout>
+
+                        <Entry Placeholder="Correo Electrónico" Text="{Binding Correo}" PlaceholderColor="Black" HeightRequest="40" VerticalOptions="Center"/>
+                        <Entry Placeholder="Contraseña" Text="{Binding Contraseña}" IsPassword="True" PlaceholderColor="Black" HeightRequest="40" VerticalOptions="Center"/>
+                        <Entry Placeholder="Nombre" Text="{Binding Nombre}" PlaceholderColor="Black" HeightRequest="40" VerticalOptions="Center"/>
+                        <Entry Placeholder="Usuario" Text="{Binding Usuario}" PlaceholderColor="Black" HeightRequest="40" VerticalOptions="Center"/>
+
+                        <Button x:Name="Registrar" Text="Registrar" TextColor="White" FontAttributes="Bold" CornerRadius="20" Command="{Binding RegisterCommand}">
+                            <Button.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <GradientStop Color="#3498DB" Offset="0.0" />
+                                    <GradientStop Color="#1e2671" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+
+                        <Button x:Name="login"
+                                Text="Ya tienes cuenta? Inicia Sesión" 
+                                FontSize="13" HorizontalOptions="CenterAndExpand" 
+                                BackgroundColor="Transparent"
+                                Clicked="login_Clicked"/>
+
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
