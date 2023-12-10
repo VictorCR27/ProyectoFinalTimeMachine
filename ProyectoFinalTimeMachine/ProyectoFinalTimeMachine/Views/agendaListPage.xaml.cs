@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ProyectoFinalTimeMachine.Model;
+using Xamarin.Essentials;
 
 namespace ProyectoFinalTimeMachine.Views
 {
@@ -20,9 +21,24 @@ namespace ProyectoFinalTimeMachine.Views
 
         protected override async void OnAppearing()
         {
-            var tasks = await tareaRepository.GetAll();
-            TareaListView.ItemsSource = null;
-            TareaListView.ItemsSource = tasks;
+            // Obtén el ID del usuario actual
+            string userId = Preferences.Get("MyFirebaseUserId", string.Empty);
+
+            // Verifica que el ID del usuario no esté vacío
+            if (!string.IsNullOrEmpty(userId))
+            {
+                // Obtén las tareas que pertenecen al usuario actual
+                var tasks = await tareaRepository.GetAll(userId);
+
+                // Establece las tareas como origen de datos para la lista
+                TareaListView.ItemsSource = tasks;
+            }
+            else
+            {
+                // Si el ID del usuario está vacío, muestra un mensaje de error o realiza alguna acción adecuada
+                await DisplayAlert("Error", "No se pudo obtener el ID del usuario actual.", "OK");
+            }
+
             TareaListView.IsRefreshing = false;
         }
 

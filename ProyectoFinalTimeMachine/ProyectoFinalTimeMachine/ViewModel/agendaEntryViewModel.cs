@@ -13,9 +13,13 @@ namespace ProyectoFinalTimeMachine.ViewModel
         public TimeMachineModel task { get; set; }
         public Command commandSave { get; set; }
 
+        private string userId;
 
-        public agendaEntryViewModel()
+        private string idUsuario;
+
+        public agendaEntryViewModel(string userId)
         {
+            this.userId = userId;
             task = new TimeMachineModel();
 
             commandSave = new Command(saveTarea);
@@ -23,25 +27,32 @@ namespace ProyectoFinalTimeMachine.ViewModel
 
         private async void saveTarea()
         {
-            /*string name = txtName.Text;
-            string email = txtEmail.Text;
-            string phone = txtPhone.Text;*/
-
-            if (Validar(task))
+            try
             {
-                var isSaved = await repository.Save(task);
+                // Asigna el ID del usuario al modelo
+                task.IdUsuario = userId;
 
-                if (isSaved)
+                if (Validar(task))
                 {
-                    //await DisplayAlert("Información", "Registro ha sido almacenado", "Ok");
-                    UserDialogs.Instance.Alert("Tarea ha sido almacenada", "Información", "Ok");
-                    Clear();
-                }
-                else
-                {
-                    //await DisplayAlert("Erro", "Error al almacenar", "Ok");
-                }
+                    var isSaved = await repository.Save(task);
 
+                    if (isSaved)
+                    {
+                        UserDialogs.Instance.Alert("Tarea ha sido almacenada", "Información", "Ok");
+
+                        // Realiza alguna acción adicional, como limpiar el formulario o navegar a otra página
+                        Clear();
+                    }
+                    else
+                    {
+                        UserDialogs.Instance.Alert("Error al guardar la tarea", "Error", "Ok");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier excepción que pueda ocurrir durante el proceso de guardado
+                UserDialogs.Instance.Alert("Error inesperado", "Error", "Ok");
             }
         }
 
@@ -49,8 +60,8 @@ namespace ProyectoFinalTimeMachine.ViewModel
         {
             task.Tarea = string.Empty;
             task.Descripcion = string.Empty;
-            task.Fecha = DateTime.Today; 
-            task.Hora = TimeSpan.Zero; 
+            task.Fecha = DateTime.Today;
+            task.Hora = TimeSpan.Zero;
             task.IsCompleted = false;
         }
 
@@ -67,11 +78,11 @@ namespace ProyectoFinalTimeMachine.ViewModel
             {
                 mensaje += "La descripción es requerida.\n";
             }
-            if (task.Fecha == DateTime.MinValue) 
+            if (task.Fecha == DateTime.MinValue)
             {
                 mensaje += "La fecha de vencimiento es requerida.\n";
             }
-            if (task.Hora == TimeSpan.Zero) 
+            if (task.Hora == TimeSpan.Zero)
             {
                 mensaje += "La hora es requerida.\n";
             }
@@ -84,6 +95,6 @@ namespace ProyectoFinalTimeMachine.ViewModel
 
             return respuesta;
         }
-
     }
 }
+

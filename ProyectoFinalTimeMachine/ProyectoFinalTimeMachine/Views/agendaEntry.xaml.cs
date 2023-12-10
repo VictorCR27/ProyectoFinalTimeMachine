@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 using ProyectoFinalTimeMachine.Model;
 using ProyectoFinalTimeMachine.ViewModel;
 using static Xamarin.Essentials.Permissions;
+using Xamarin.Essentials;
 
 namespace ProyectoFinalTimeMachine.Views
 {
@@ -18,7 +19,11 @@ namespace ProyectoFinalTimeMachine.Views
         public agendaEntry()
         {
             InitializeComponent();
-            this.BindingContext = new agendaEntryViewModel();
+
+            // Supongamos que obtienes el ID del usuario de algún lugar, por ejemplo, Preferences.
+            string userId = Preferences.Get("MyFirebaseUserId", ""); 
+
+            this.BindingContext = new agendaEntryViewModel(userId);
         }
     }
 }

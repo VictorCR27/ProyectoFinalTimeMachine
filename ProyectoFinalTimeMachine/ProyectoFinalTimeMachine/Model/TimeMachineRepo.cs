@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ProyectoFinalTimeMachine.Model
@@ -20,18 +21,41 @@ namespace ProyectoFinalTimeMachine.Model
             return false;
         }
 
-        public async Task<List<TimeMachineModel>> GetAll()
+        //public async Task<List<TimeMachineModel>> GetAll(string userId)
+        //{
+        //    return (await firebaseClient.Child(nameof(TimeMachineModel)).OnceAsync<TimeMachineModel>()).Select(item => new TimeMachineModel
+        //    {
+        //        Descripcion = item.Object.Descripcion,
+        //        Tarea = item.Object.Tarea,
+        //        Fecha = item.Object.Fecha,
+        //        Hora = item.Object.Hora,
+        //        IsCompleted = item.Object.IsCompleted,
+        //        Id = item.Key
+        //    }).ToList();
+        //}
+
+        public async Task<List<TimeMachineModel>> GetAll(string userId)
         {
-            return (await firebaseClient.Child(nameof(TimeMachineModel)).OnceAsync<TimeMachineModel>()).Select(item => new TimeMachineModel
-            {
-                Descripcion = item.Object.Descripcion,
-                Tarea = item.Object.Tarea,
-                Fecha = item.Object.Fecha,
-                Hora = item.Object.Hora,
-                IsCompleted = item.Object.IsCompleted,
-                Id = item.Key
-            }).ToList();
+            var allAlarms = await firebaseClient
+                .Child(nameof(TimeMachineModel))
+                .OnceAsync<TimeMachineModel>();
+
+            return allAlarms
+                .Select(item => new TimeMachineModel
+                {
+                    Descripcion = item.Object.Descripcion,
+                    Tarea = item.Object.Tarea,
+                    Fecha = item.Object.Fecha,
+                    Hora = item.Object.Hora,
+                    IsCompleted = item.Object.IsCompleted,
+                    Id = item.Key,
+                    IdUsuario = item.Object.IdUsuario  // Asegúrate de agregar esta línea
+                })
+                .Where(alarm => alarm.IdUsuario == userId)
+                .ToList();
         }
+
+
 
         public async Task<List<TimeMachineModel>> GetAllByName(string tarea)
         {

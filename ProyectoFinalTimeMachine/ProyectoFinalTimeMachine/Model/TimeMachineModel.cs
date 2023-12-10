@@ -9,15 +9,26 @@ namespace ProyectoFinalTimeMachine.Model
         private string id;
         private string tarea;
         private string descripcion;
-        private string fecha;
-        private string hora;
-        public bool isCompleted;  
+        private DateTime _fecha;
+        private TimeSpan _hora;
+        public bool isCompleted;    
 
         //private string usuario;
         //private string clave;
         //private string nombre;
         //private string correo;
         //private string IdUsuario;
+
+        private string idUsuario;
+        public string IdUsuario
+        {
+            get { return idUsuario; }
+            set
+            {
+                idUsuario = value;
+                OnPropertyChanged();
+            }
+        }
 
         public string Id
         {
@@ -47,7 +58,7 @@ namespace ProyectoFinalTimeMachine.Model
             }
         }
 
-        private DateTime _fecha;
+        
         public DateTime Fecha
         {
             get { return _fecha; }
@@ -62,7 +73,7 @@ namespace ProyectoFinalTimeMachine.Model
             }
         }
 
-        private TimeSpan _hora;
+        
         public TimeSpan Hora
         {
             get { return _hora; }
