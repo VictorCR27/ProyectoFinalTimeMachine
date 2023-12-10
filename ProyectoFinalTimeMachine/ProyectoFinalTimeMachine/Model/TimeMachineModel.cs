@@ -11,7 +11,8 @@ namespace ProyectoFinalTimeMachine.Model
         private string descripcion;
         private DateTime _fecha;
         private TimeSpan _hora;
-        public bool isCompleted;    
+        public bool isCompleted;
+        
 
         //private string usuario;
         //private string clave;
@@ -121,7 +122,7 @@ namespace ProyectoFinalTimeMachine.Model
         //    }
         //}
 
-        
+
         //public string Clave
         //{
         //    get => clave;
@@ -132,7 +133,7 @@ namespace ProyectoFinalTimeMachine.Model
         //    }
         //}
 
-        
+
         //public string Nombre
         //{
         //    get => nombre;
@@ -142,7 +143,7 @@ namespace ProyectoFinalTimeMachine.Model
         //        OnPropertyChanged();
         //    }
         //}
-   
+
         //public string Correo
         //{
         //    get => correo;
