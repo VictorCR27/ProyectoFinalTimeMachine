@@ -6,6 +6,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add"
                      x:Name="AddToolBarItem"
+                     IconImageSource="add.png"
                      Clicked="AddToolBarItem_Clicked"></ToolbarItem>
     </ContentPage.ToolbarItems>
 
@@ -61,7 +62,8 @@
 
                                     <StackLayout VerticalOptions="Center"
                                                  HorizontalOptions="EndAndExpand">
-                                        <Image Source="edit.png"
+
+                                        <Image Source="https://cdn-icons-png.flaticon.com/512/3597/3597088.png"
                                                HeightRequest="20"
                                                WidthRequest="20">
                                             <Image.GestureRecognizers>
@@ -71,7 +73,7 @@
                                             </Image.GestureRecognizers>
                                         </Image>
 
-                                        <Image Source="delete.png"
+                                        <Image Source="delete1.png"
                                                HeightRequest="20"
                                                WidthRequest="20">
                                             <Image.GestureRecognizers>
