@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 using ProyectoFinalTimeMachine.Model;
+using ProyectoFinalTimeMachine.Views;
 
 namespace ProyectoFinalTimeMachine.ViewModel
 {
@@ -30,6 +31,7 @@ namespace ProyectoFinalTimeMachine.ViewModel
             {
                 await Application.Current.MainPage.Navigation.PopModalAsync();
                 UserDialogs.Instance.Alert("Tarea actualizada", "Importante", "Ok");
+                await Application.Current.MainPage.Navigation.PushAsync(new agendaListPage());
             }
             else
             {

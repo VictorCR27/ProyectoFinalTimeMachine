@@ -56,6 +56,8 @@ namespace ProyectoFinalTimeMachine.ViewModel
             }
         }
 
+
+
         private void Clear()
         {
             task.Tarea = string.Empty;

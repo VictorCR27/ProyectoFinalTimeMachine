@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ProyectoFinalTimeMachine.Model;
 using Xamarin.Essentials;
+using System.Threading.Tasks;
 
 namespace ProyectoFinalTimeMachine.Views
 {
@@ -171,6 +172,10 @@ namespace ProyectoFinalTimeMachine.Views
             await Navigation.PushModalAsync(new agendaEdit(task));
         }
 
-
+        //Manual
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ManualUsuario());
+        }
     }
 }
