@@ -4,14 +4,15 @@
              x:Class="ProyectoFinalTimeMachine.Views.agendaListPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" x:Name="AddToolBarItem" IconImageSource="add.png" Clicked="AddToolBarItem_Clicked"></ToolbarItem>
+        <ToolbarItem Text="Add" IconImageSource="add.png" Clicked="AddToolBarItem_Clicked"></ToolbarItem>
         <ToolbarItem Text="Ayuda" IconImageSource="informacion.png" Priority="1" Order="Primary" Clicked="ToolbarItem_Clicked"/>
     </ContentPage.ToolbarItems>
 
 
     <ContentPage.Content>
         <StackLayout>
-            <SearchBar Placeholder="Search..."
+
+            <SearchBar Placeholder="Buscar..."
                        x:Name="txtSearch"
                        TextChanged="TxtSearch_TextChanged"
                        SearchButtonPressed="TxtSearch_SearchButtonPressed" />
@@ -80,9 +81,7 @@
                                                                       CommandParameter="{Binding Id}" />
                                             </Image.GestureRecognizers>
                                         </Image>
-
-
-
+                                        
                                     </StackLayout>
                                 </StackLayout>
                             </SwipeView>

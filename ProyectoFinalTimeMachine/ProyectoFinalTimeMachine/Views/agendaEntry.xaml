@@ -5,29 +5,43 @@
              x:Class="ProyectoFinalTimeMachine.Views.agendaEntry">
 
     <ContentPage.Content>
-        <StackLayout Padding="15"
-                     VerticalOptions="CenterAndExpand">
-            <Label Text="Tareas"
-                   VerticalOptions="Center"
-                   HorizontalOptions="Center"
-                   FontSize="Large" />
+        <Grid>
+            <!-- Fondo con gradiente -->
+            <BoxView Color="#2f74b5">
+                <BoxView.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#3498DB" Offset="0.0" />
+                        <GradientStop Color="#1e2671" Offset="1.0" />
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
 
-            <Entry x:Name="txtTarea" Placeholder="Tarea" Text="{Binding task.Tarea}"/>
-            <Entry x:Name="txtEmail" Placeholder="Descripcion" Text="{Binding task.Descripcion}"/>
+            <Frame CornerRadius="20" BackgroundColor="White" Margin="20,150,20,150">
+                <StackLayout Padding="15" VerticalOptions="Center">
+                    <Label Text="Agregar a agenda" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" />
 
-            <DatePicker x:Name="datePicker" Date="{Binding task.Fecha}" MinimumDate="{x:Static local:DateTimeHelper.Today}" />
+                    <Entry x:Name="txtTarea" Placeholder="Tarea" Text="{Binding task.Tarea}"/>
+                    <Entry x:Name="txtEmail" Placeholder="Descripcion" Text="{Binding task.Descripcion}"/>
 
-            <TimePicker x:Name="txtHora" Time="{Binding task.Hora}" Format="T" />
+                    <DatePicker x:Name="datePicker" Date="{Binding task.Fecha}" MinimumDate="{x:Static local:DateTimeHelper.Today}" />
 
-            <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
-                <Label Text="Completado:" VerticalOptions="Center" />
-                <Switch IsToggled="{Binding task.IsCompleted}" VerticalOptions="Center" />
-            </StackLayout>
+                    <TimePicker x:Name="txtHora" Time="{Binding task.Hora}" Format="T" />
 
-            <Button Text="Save"
-                    x:Name="btnSave"
-                    CornerRadius="15"
-                    Command="{Binding commandSave}" />
-        </StackLayout>
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="Completado:" VerticalOptions="Center" />
+                        <Switch IsToggled="{Binding task.IsCompleted}" VerticalOptions="Center" />
+                    </StackLayout>
+
+                    <Button Text="Guardar" x:Name="btnSave" TextColor="White" CornerRadius="15" Command="{Binding commandSave}">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Color="#3498DB" Offset="0.0" />
+                                <GradientStop Color="#1e2671" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </StackLayout>
+            </Frame>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

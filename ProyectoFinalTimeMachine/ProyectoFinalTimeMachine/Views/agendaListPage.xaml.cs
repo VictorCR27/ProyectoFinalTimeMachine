@@ -60,7 +60,7 @@ namespace ProyectoFinalTimeMachine.Views
             */
 
             var task = e.Item as TimeMachineModel;
-            Navigation.PushModalAsync(new agendaDetails(task));
+            //Navigation.PushModalAsync(new agendaDetails(task));
             ((ListView)sender).SelectedItem = null;
         }
 

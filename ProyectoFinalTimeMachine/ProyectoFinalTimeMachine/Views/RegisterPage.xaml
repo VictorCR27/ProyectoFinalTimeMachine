@@ -25,10 +25,10 @@
                 <Frame CornerRadius="20" BackgroundColor="White" Margin="20">
                     <StackLayout>
 
-                        <Entry Placeholder="Correo Electrónico" Text="{Binding Correo}" PlaceholderColor="Black" HeightRequest="40" VerticalOptions="Center"/>
-                        <Entry Placeholder="Contraseña" Text="{Binding Contraseña}" IsPassword="True" PlaceholderColor="Black" HeightRequest="40" VerticalOptions="Center"/>
-                        <Entry Placeholder="Nombre" Text="{Binding Nombre}" PlaceholderColor="Black" HeightRequest="40" VerticalOptions="Center"/>
-                        <Entry Placeholder="Usuario" Text="{Binding Usuario}" PlaceholderColor="Black" HeightRequest="40" VerticalOptions="Center"/>
+                        <Entry Placeholder="Correo" Text="{Binding Correo}" HeightRequest="40" VerticalOptions="Center"/>
+                        <Entry Placeholder="Contraseña" Text="{Binding Contraseña}" IsPassword="True" HeightRequest="40" VerticalOptions="Center"/>
+                        <Entry Placeholder="Nombre" Text="{Binding Nombre}" HeightRequest="40" VerticalOptions="Center"/>
+                        <Entry Placeholder="Usuario" Text="{Binding Usuario}" HeightRequest="40" VerticalOptions="Center"/>
 
                         <Button x:Name="Registrar" Text="Registrar" TextColor="White" FontAttributes="Bold" CornerRadius="20" Command="{Binding RegisterCommand}">
                             <Button.Background>

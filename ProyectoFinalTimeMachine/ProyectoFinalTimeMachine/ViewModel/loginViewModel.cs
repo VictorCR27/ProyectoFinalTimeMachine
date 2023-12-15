@@ -7,6 +7,7 @@ using CommunityToolkit.Mvvm.Input;
 using System;
 using ProyectoFinalTimeMachine.Views;
 using System.Linq;
+using System.Threading.Tasks;
 
 
 namespace ProyectoFinalTimeMachine.ViewModel
@@ -32,7 +33,6 @@ namespace ProyectoFinalTimeMachine.ViewModel
             set { SetValue(ref this.contraseña, value); }
         }
 
-
         //Comandos
         public ICommand LoginCommand
         {
@@ -50,6 +50,7 @@ namespace ProyectoFinalTimeMachine.ViewModel
         //Metodos
         public async void LoginMethod()
         {
+
             if (string.IsNullOrEmpty(this.correo) || string.IsNullOrEmpty(this.contraseña))
             {
                 await Application.Current.MainPage.DisplayAlert(

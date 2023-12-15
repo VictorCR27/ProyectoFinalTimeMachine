@@ -17,11 +17,13 @@ namespace ProyectoFinalTimeMachine.Views
         {
             InitializeComponent();
             BindingContext = new loginViewModel();
+            
         }
 
         private void Registro_Clicked(object sender, EventArgs e)
         {
             App.Current.MainPage.Navigation.PushAsync(new RegisterPage());
         }
+  
     }
 }
