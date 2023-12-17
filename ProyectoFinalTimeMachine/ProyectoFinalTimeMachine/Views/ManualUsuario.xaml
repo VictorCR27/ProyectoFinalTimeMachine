@@ -7,14 +7,24 @@
             <Label Text="Manual de Usuario" FontSize="Title" HorizontalOptions="CenterAndExpand" Margin="0, 20, 0, 20" />
 
             <Label Text="Login" FontSize="Subtitle" FontAttributes="Bold" Margin="10, 0, 0, 10" />
-            <Label Text="Debe ingresar los valores registrados en su cuenta, es decir, el usuario y la contraseña para poder acceder a la aplicación. En caso de no tener cuenta, ingresar a la opción *No tienes cuenta? Registro*. " Margin="10, 0, 0, 20" />
+            <Label Text="Debe ingresar los valores registrados en su cuenta, es decir, el usuario y la contraseña para poder acceder a la aplicación. En caso de no tener cuenta, ingresar a la opción No tienes cuenta? Registro. " Margin="10, 0, 0, 20" />
 
             <Label Text="Registro" FontSize="Subtitle" FontAttributes="Bold" Margin="10, 0, 0, 10" />
             <Label Text="En esta sección debe de ingresar el usuario y la contraseña que desea usar para ingresar a su cuenta, los valores ingresados se guardan en la base de datos." Margin="10, 0, 0, 20" />
 
-            <Label Text="Añadir alarma" FontSize="Subtitle" FontAttributes="Bold" Margin="10, 0, 0, 10" />
-            <Label Text="Para añadir una alarma nueva, debe de agregar el título para recordar de la alarma, el asunto de este, y la fecha, junto con la hora que desea que se haga el recordatorio. Para confirmar la alarma debe presionar el botón *Añadir*" Margin="10, 0, 0, 20" />
+            <Label Text="La agenda tiene las siguientes funciones para las alarmas:" FontSize="Subtitle" FontAttributes="Bold" Margin="10, 0, 0, 10" />
 
+            <Label Text="1.Añadir alarma" FontSize="Subtitle" FontAttributes="Bold" Margin="10, 0, 0, 10" />
+            <Label Text="Para añadir una alarma nueva, debe de agregar el título para recordar de la alarma, el asunto de este, y la fecha, junto con la hora que desea que se haga el recordatorio. Para confirmar la alarma debe presionar el botón Añadir" Margin="10, 0, 0, 20" />
+
+            <Label Text="2.Actualizar alarma" FontSize="Subtitle" FontAttributes="Bold" Margin="10, 0, 0, 10" />
+            <Label Text="Después de añadida la alarma, si el usuario desea actualizar algún dato de este, debe presionar la ícono encima del basurero, la cual se encarga de editar la información de esa alarma en específico." Margin="10, 0, 0, 20" />
+
+            <Label Text="3.Eliminar alarma" FontSize="Subtitle" FontAttributes="Bold" Margin="10, 0, 0, 10" />
+            <Label Text="Si el usuario desea eliminar alguna alarma añadida, debe presionar el ícono de basurero, la cual se encarga de eliminar la alarma escogida." Margin="10, 0, 0, 20" />
+
+            <Label Text="4.Buscar alarma" FontSize="Subtitle" FontAttributes="Bold" Margin="10, 0, 0, 10" />
+            <Label Text="Encima de las alarmas, se encuentra un buscador. Si el usuario desea buscar una alarma específica, debe escribir el título de la alarma deseada para filtrar y que este muestre los títulos similares al escrito." Margin="10, 0, 0, 20" />
 
             <Image Source="login_screenshot.png" Aspect="AspectFit" Margin="10, 0, 10, 20" />
 

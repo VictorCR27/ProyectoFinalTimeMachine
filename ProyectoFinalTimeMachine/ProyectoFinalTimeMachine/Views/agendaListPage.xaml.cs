@@ -4,6 +4,8 @@ using Xamarin.Forms.Xaml;
 using ProyectoFinalTimeMachine.Model;
 using Xamarin.Essentials;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+
 
 namespace ProyectoFinalTimeMachine.Views
 {
