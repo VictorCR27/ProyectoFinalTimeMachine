@@ -62,7 +62,7 @@ namespace ProyectoFinalTimeMachine.ViewModel
         {
             task.Tarea = string.Empty;
             task.Descripcion = string.Empty;
-            task.Fecha = DateTime.Today;
+            task.Fecha = DateTime.Now;
             task.Hora = TimeSpan.Zero;
             task.IsCompleted = false;
         }

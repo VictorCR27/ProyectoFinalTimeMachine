@@ -59,7 +59,11 @@ namespace ProyectoFinalTimeMachine.Model
             }
         }
 
-        
+        // Constructor que inicializa la fecha con la fecha actual al crear una nueva instancia
+        public TimeMachineModel()
+        {
+            Fecha = DateTime.Now;
+        }
         public DateTime Fecha
         {
             get { return _fecha; }
