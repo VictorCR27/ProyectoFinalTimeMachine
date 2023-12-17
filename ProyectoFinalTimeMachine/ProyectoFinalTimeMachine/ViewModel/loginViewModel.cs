@@ -74,8 +74,8 @@ namespace ProyectoFinalTimeMachine.ViewModel
 
                 AgendaEntryViewModel = new agendaEntryViewModel(auth.User?.LocalId);
 
-                string mensajeBienvenida = $"Bienvenido, usuario con ID: {auth.User?.LocalId}";
-                await App.Current.MainPage.DisplayAlert("Éxito", mensajeBienvenida, "OK");
+                //string mensajeBienvenida = $"Bienvenido, usuario con ID: {auth.User?.LocalId}";
+                await App.Current.MainPage.DisplayAlert("Éxito", "Bienvenido a TimeMachine", "OK");
                 await Application.Current.MainPage.Navigation.PushAsync(new agendaListPage());
             }
             catch (Exception ex)

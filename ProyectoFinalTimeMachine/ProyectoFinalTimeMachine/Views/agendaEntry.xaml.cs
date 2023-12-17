@@ -20,7 +20,6 @@ namespace ProyectoFinalTimeMachine.Views
         {
             InitializeComponent();
 
-            // Supongamos que obtienes el ID del usuario de algún lugar, por ejemplo, Preferences.
             string userId = Preferences.Get("MyFirebaseUserId", ""); 
 
             this.BindingContext = new agendaEntryViewModel(userId);
